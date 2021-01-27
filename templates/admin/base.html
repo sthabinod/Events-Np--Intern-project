@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en-us" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Welcome to Events Nepal Admin</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="/static/adminlte/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/static/adminlte/css/adminlte.min.css">
+
+    <!-- Custom fixes for django -->
+    <link rel="stylesheet" href="/static/jazzmin/css/django.css">
+
+    
+
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+     
+
+     
+</head>
+<body class="hold-transition sidebar-mini sidebar-collapse  dashboard accent-primary" data-admin-utc-offset="0">
+
+<div class="wrapper">
+
+    
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light" id="jazzy-navbar">
+            <ul class="navbar-nav">
+
+                
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    </li>
+                
+
+                
+                
+            </ul>
+
+            
+
+            <ul class="navbar-nav ml-auto">
+
+                
+                
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link btn" data-toggle="dropdown" href="#" title="user">
+                        <i class="far fa-user pr-2" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-left" id="jazzy-usermenu">
+                        <span class="dropdown-header">Account</span>
+                        <div class="dropdown-divider"></div>
+                        <a href="/admin/password_change/" class="dropdown-item">
+                            <i class="fas fa-key mr-2"></i> Change password
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/admin/logout/" class="dropdown-item">
+                            <i class="fas fa-users mr-2"></i> Log out
+                        </a>
+                        
+                        
+                        <div class="dropdown-divider"></div>
+                        
+                            <a href="/admin/auth/user/1/change/" class="dropdown-item dropdown-footer">See Profile</a>
+                        
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        
+        
+            
+
+            <aside class="main-sidebar elevation-4 sidebar-dark-primary" id="jazzy-sidebar">
+                <a href="/admin/" class="brand-link " id="jazzy-logo">
+                    <img src="/static/adminlte/img/AdminLTELogo.png" alt="Django administration Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                    <span class="brand-text font-weight-light">EventsNP admin</span>
+                </a>
+
+                <div class="sidebar">
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        <div class="image">
+                            
+                                <img src="/static/adminlte/img/user2-160x160.jpg" width="160px" class="img-circle elevation-2" alt="User Image">
+                            
+                        </div>
+                        <div class="info">
+                            
+                                <a href="/admin/auth/user/1/change/" class="d-block">user</a>
+                            
+                        </div>
+                    </div>
+
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column " data-widget="treeview" role="menu" data-collapsible="false">
+
+                            <li class="nav-item">
+                                <a href="/admin/" class="nav-link">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>Dashboard</p>
+                                </a>
+                            </li>
+
+                            
+                                
+                                    <li class="nav-header">Authentication and Authorization</li>
+                                    
+                                        <li class="nav-item">
+                                            
+                                            <a href="/admin/auth/group/" class="nav-link">
+                                                <i class="nav-icon fas fa-users"></i> <p>Groups</p>
+                                            </a>
+                                        
+                                        </li>
+                                    
+                                        <li class="nav-item">
+                                            
+                                            <a href="/admin/auth/user/" class="nav-link">
+                                                <i class="nav-icon fas fa-user"></i> <p>Users</p>
+                                            </a>
+                                        
+                                        </li>
+                                    
+                                
+                                    <li class="nav-header">Blogs</li>
+                                    
+                                        <li class="nav-item">
+                                            
+                                            <a href="/admin/blogs/blog/" class="nav-link">
+                                                <i class="nav-icon fas fa-circle"></i> <p>Blogs</p>
+                                            </a>
+                                        
+                                        </li>
+                                    
+                                
+                                    <li class="nav-header">Core</li>
+                                    
+                                        <li class="nav-item">
+                                            
+                                            <a href="/admin/core/contact/" class="nav-link">
+                                                <i class="nav-icon fas fa-circle"></i> <p>Contacts</p>
+                                            </a>
+                                        
+                                        </li>
+                                    
+                                        <li class="nav-item">
+                                            
+                                            <a href="/admin/core/faq/" class="nav-link">
+                                                <i class="nav-icon fas fa-circle"></i> <p>Faqs</p>
+                                            </a>
+                                        
+                                        </li>
+                                    
+                                
+                                    <li class="nav-header">Events</li>
+                                    
+                                        <li class="nav-item">
+                                            
+                                            <a href="/admin/events/category/" class="nav-link">
+                                                <i class="nav-icon fas fa-circle"></i> <p>Categories</p>
+                                            </a>
+                                        
+                                        </li>
+                                    
+                                        <li class="nav-item">
+                                            
+                                            <a href="/admin/events/event/" class="nav-link">
+                                                <i class="nav-icon fas fa-circle"></i> <p>Events</p>
+                                            </a>
+                                        
+                                        </li>
+                                    
+                                        <li class="nav-item">
+                                            
+                                            <a href="/admin/events/file/" class="nav-link">
+                                                <i class="nav-icon fas fa-circle"></i> <p>Files</p>
+                                            </a>
+                                        
+                                        </li>
+                                    
+                                        <li class="nav-item">
+                                            
+                                            <a href="/admin/events/organiser/" class="nav-link">
+                                                <i class="nav-icon fas fa-circle"></i> <p>Organisers</p>
+                                            </a>
+                                        
+                                        </li>
+                                    
+                                        <li class="nav-item">
+                                            
+                                            <a href="/admin/events/person/" class="nav-link">
+                                                <i class="nav-icon fas fa-circle"></i> <p>Persons</p>
+                                            </a>
+                                        
+                                        </li>
+                                    
+                                        <li class="nav-item">
+                                            
+                                            <a href="/admin/events/program/" class="nav-link">
+                                                <i class="nav-icon fas fa-circle"></i> <p>Programs</p>
+                                            </a>
+                                        
+                                        </li>
+                                    
+                                        <li class="nav-item">
+                                            
+                                            <a href="/admin/events/schedule/" class="nav-link">
+                                                <i class="nav-icon fas fa-circle"></i> <p>Schedules</p>
+                                            </a>
+                                        
+                                        </li>
+                                    
+                                        <li class="nav-item">
+                                            
+                                            <a href="/admin/events/speaker/" class="nav-link">
+                                                <i class="nav-icon fas fa-circle"></i> <p>Speakers</p>
+                                            </a>
+                                        
+                                        </li>
+                                    
+                                
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+        
+        
+    
+
+    <div class="content-wrapper" >
+        
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-auto col-sm-3">
+                            <h1 class="m-0 text-dark"> Dashboard </h1>
+                        </div>
+                        <div class="col-auto col-sm-9">
+                            
+    <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="/admin/"><i class="fa fa-tachometer-alt"></i> Home</a></li>
+        <li class="breadcrumb-item">Dashboard</li>
+    </ol>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="container-fluid">
+                    <section id="content" class="content">
+                        
+                            
+                        
+                        <div class="row">
+                            
+    
+    
+        
+    
+
+    <div class="col-lg-9 col-12">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="m-0">Authentication and Authorization</h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-sm">
+                                <tbody>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="/admin/auth/group/">Groups</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group float-right">
+                                                
+                                                    <a href="/admin/auth/group/add/" class="btn btn-sm btn-success btn-flat addlink">Add</a>
+                                                
+                                                
+                                                    
+                                                        <a href="/admin/auth/group/" class="btn btn-sm btn-outline-info btn-flat changelink">Change</a>
+                                                    
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="/admin/auth/user/">Users</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group float-right">
+                                                
+                                                    <a href="/admin/auth/user/add/" class="btn btn-sm btn-success btn-flat addlink">Add</a>
+                                                
+                                                
+                                                    
+                                                        <a href="/admin/auth/user/" class="btn btn-sm btn-outline-info btn-flat changelink">Change</a>
+                                                    
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    
+
+                
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="m-0">Blogs</h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-sm">
+                                <tbody>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="/admin/blogs/blog/">Blogs</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group float-right">
+                                                
+                                                    <a href="/admin/blogs/blog/add/" class="btn btn-sm btn-success btn-flat addlink">Add</a>
+                                                
+                                                
+                                                    
+                                                        <a href="/admin/blogs/blog/" class="btn btn-sm btn-outline-info btn-flat changelink">Change</a>
+                                                    
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                    
+
+                
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="m-0">Core</h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-sm">
+                                <tbody>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="/admin/core/contact/">Contacts</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group float-right">
+                                                
+                                                    <a href="/admin/core/contact/add/" class="btn btn-sm btn-success btn-flat addlink">Add</a>
+                                                
+                                                
+                                                    
+                                                        <a href="/admin/core/contact/" class="btn btn-sm btn-outline-info btn-flat changelink">Change</a>
+                                                    
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="/admin/core/faq/">Faqs</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group float-right">
+                                                
+                                                    <a href="/admin/core/faq/add/" class="btn btn-sm btn-success btn-flat addlink">Add</a>
+                                                
+                                                
+                                                    
+                                                        <a href="/admin/core/faq/" class="btn btn-sm btn-outline-info btn-flat changelink">Change</a>
+                                                    
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    
+
+                
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="m-0">Events</h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-sm">
+                                <tbody>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="/admin/events/category/">Categories</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group float-right">
+                                                
+                                                    <a href="/admin/events/category/add/" class="btn btn-sm btn-success btn-flat addlink">Add</a>
+                                                
+                                                
+                                                    
+                                                        <a href="/admin/events/category/" class="btn btn-sm btn-outline-info btn-flat changelink">Change</a>
+                                                    
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="/admin/events/event/">Events</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group float-right">
+                                                
+                                                    <a href="/admin/events/event/add/" class="btn btn-sm btn-success btn-flat addlink">Add</a>
+                                                
+                                                
+                                                    
+                                                        <a href="/admin/events/event/" class="btn btn-sm btn-outline-info btn-flat changelink">Change</a>
+                                                    
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="/admin/events/file/">Files</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group float-right">
+                                                
+                                                    <a href="/admin/events/file/add/" class="btn btn-sm btn-success btn-flat addlink">Add</a>
+                                                
+                                                
+                                                    
+                                                        <a href="/admin/events/file/" class="btn btn-sm btn-outline-info btn-flat changelink">Change</a>
+                                                    
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="/admin/events/organiser/">Organisers</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group float-right">
+                                                
+                                                    <a href="/admin/events/organiser/add/" class="btn btn-sm btn-success btn-flat addlink">Add</a>
+                                                
+                                                
+                                                    
+                                                        <a href="/admin/events/organiser/" class="btn btn-sm btn-outline-info btn-flat changelink">Change</a>
+                                                    
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="/admin/events/person/">Persons</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group float-right">
+                                                
+                                                    <a href="/admin/events/person/add/" class="btn btn-sm btn-success btn-flat addlink">Add</a>
+                                                
+                                                
+                                                    
+                                                        <a href="/admin/events/person/" class="btn btn-sm btn-outline-info btn-flat changelink">Change</a>
+                                                    
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="/admin/events/program/">Programs</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group float-right">
+                                                
+                                                    <a href="/admin/events/program/add/" class="btn btn-sm btn-success btn-flat addlink">Add</a>
+                                                
+                                                
+                                                    
+                                                        <a href="/admin/events/program/" class="btn btn-sm btn-outline-info btn-flat changelink">Change</a>
+                                                    
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="/admin/events/schedule/">Schedules</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group float-right">
+                                                
+                                                    <a href="/admin/events/schedule/add/" class="btn btn-sm btn-success btn-flat addlink">Add</a>
+                                                
+                                                
+                                                    
+                                                        <a href="/admin/events/schedule/" class="btn btn-sm btn-outline-info btn-flat changelink">Change</a>
+                                                    
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>
+                                            <a href="/admin/events/speaker/">Speakers</a>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group float-right">
+                                                
+                                                    <a href="/admin/events/speaker/add/" class="btn btn-sm btn-success btn-flat addlink">Add</a>
+                                                
+                                                
+                                                    
+                                                        <a href="/admin/events/speaker/" class="btn btn-sm btn-outline-info btn-flat changelink">Change</a>
+                                                    
+                                                
+                                            </div>
+                                        </td>
+                                    </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    
+
+                
+                </div>
+        </div>
+
+    </div>
+    <div class="col-lg-3 col-12">
+        <div id="content-related">
+            <div class="module" id="recent-actions-module">
+                <h3>Recent actions</h3>
+                
+                
+                
+                    <p>None available</p>
+                
+            </div>
+        </div>
+    </div>
+
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+
+        
+    </div>
+
+
+    
+        <footer class="main-footer ">
+                <div class="float-right d-none d-sm-inline">
+                    <b> Events NP</b>
+                </div>
+
+                <strong>Copyright &copy; 2020
+
+        </footer>
+        
+    
+
+
+</div>
+
+
+
+<!-- jQuery -->
+<script src="/static/adminlte/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/static/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/static/adminlte/js/adminlte.min.js"></script>
+<!-- Django customisations -->
+<script src="/static/jazzmin/js/main.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>
